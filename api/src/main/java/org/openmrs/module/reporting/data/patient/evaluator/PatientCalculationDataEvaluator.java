@@ -63,11 +63,7 @@ public class PatientCalculationDataEvaluator implements PatientDataEvaluator {
 		CalculationProvider provider;
 		try {
 			provider = (CalculationProvider) Context.loadClass(registration.getProviderClassName()).newInstance();
-		} catch (InstantiationException e) {
-			throw new EvaluationException("Could not instantiate provider for calculation " + registration.getToken(), e);
-		} catch (IllegalAccessException e) {
-			throw new EvaluationException("Could not instantiate provider for calculation " + registration.getToken(), e);
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			throw new EvaluationException("Could not instantiate provider for calculation " + registration.getToken(), e);
 		}
 

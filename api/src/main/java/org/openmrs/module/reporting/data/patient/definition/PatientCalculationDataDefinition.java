@@ -16,7 +16,7 @@
 package org.openmrs.module.reporting.data.patient.definition;
 
 import org.openmrs.calculation.CalculationRegistration;
-import org.openmrs.calculation.patient.PatientCalculation;
+import org.openmrs.calculation.result.CalculationResult;
 import org.openmrs.module.reporting.common.Localized;
 import org.openmrs.module.reporting.data.BaseDataDefinition;
 import org.openmrs.module.reporting.definition.configuration.ConfigurationProperty;
@@ -74,6 +74,6 @@ public class PatientCalculationDataDefinition extends BaseDataDefinition impleme
 	 */
 	@Override
 	public Class<?> getDataType() {
-		return PatientCalculation.class;
+		return CalculationResult.class;
 	}
 }

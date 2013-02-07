@@ -63,12 +63,12 @@ public class PatientCalculationDataEvaluatorTest extends BaseModuleContextSensit
 
 		// create a registration to put on the definition
 		CalculationRegistration registration = new CalculationRegistration();
-		registration.setToken("age");
+		registration.setToken("Test");
 		registration.setCalculationName(TestPatientCalculation.class.getCanonicalName());
 		registration.setProviderClassName(ClasspathCalculationProvider.class.getCanonicalName());
 
 		// create a definition
-		PatientCalculationDataDefinition d = new PatientCalculationDataDefinition("test definition", registration);
+		PatientCalculationDataDefinition d = new PatientCalculationDataDefinition("Example", registration);
 
 		// evaluate it
 		EvaluatedPatientData pd = Context.getService(PatientDataService.class).evaluate(d, context);
@@ -92,7 +92,7 @@ public class PatientCalculationDataEvaluatorTest extends BaseModuleContextSensit
 	public void evaluate_shouldThrowAnErrorIfNoCalculationRegistrationExistsOnTheDefinition() throws Exception {
 		EvaluationContext context = new EvaluationContext();
 		context.setBaseCohort(new Cohort("7"));
-		PatientCalculationDataDefinition d = new PatientCalculationDataDefinition("test");
+		PatientCalculationDataDefinition d = new PatientCalculationDataDefinition("Example");
 		Context.getService(PatientDataService.class).evaluate(d, context);
 	}
 }
